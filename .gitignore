@@ -7,7 +7,8 @@ pretrained/
 cor_exp/
 *.out
 /output
-
+*.h5
+data/*.json
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,cuda,zsh,c++
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,cuda,zsh,c++

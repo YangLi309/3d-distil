@@ -1,12 +1,11 @@
-git+https://github.com/imankgoyal/etw_pytorch_utils.git@v1.1.1#egg=etw_pytorch_utils
 enum34
 future
 h5py
 progressbar2
 tensorboardX
-torch==2.0.1
--f https://download.pytorch.org/whl/cu118
-torchvision==0.15.2
--f https://download.pytorch.org/whl/cu118
+torch==1.13.1+cu117
+--extra-index-url https://download.pytorch.org/whl/cu117
+torchvision==0.14.1+cu117
+--extra-index-url https://download.pytorch.org/whl/cu117
 yacs==0.1.8
 open3d==0.18.0

@@ -123,7 +123,7 @@ class PerfTrackVal:
         if self.task in ['cls', 'cls_trans']:
             perf = {
                 'acc': self.get_avg_list(self.all),
-                'class_acc': np.mean(np.array(self.class_corr) / np.array(self.class_seen,dtype=np.float))
+                'class_acc': np.mean(np.array(self.class_corr) / np.array(self.class_seen,dtype=np.float32))
             }
         else:
             assert False
@@ -332,11 +332,11 @@ def pn2_vote_evaluate_cls(dataloader, model, log_file, num_votes=[12]):
                     total_correct_class[l] += (pred_val[i] == l)
 
 
-            class_accuracies = np.array(total_correct_class)/np.array(total_seen_class,dtype=np.float)
+            class_accuracies = np.array(total_correct_class)/np.array(total_seen_class,dtype=np.float32)
             message = ""
             for i, name in enumerate(SHAPE_NAMES):
                 message += f"\n {'%10s: %0.3f' % (name, class_accuracies[i])}"
             message += f"\n {'eval accuracy: %f'% (total_correct / float(total_seen))}"
-            message += f"\n {'eval avg class acc: %f' % (np.mean(np.array(total_correct_class)/np.array(total_seen_class,dtype=np.float)))}"
+            message += f"\n {'eval avg class acc: %f' % (np.mean(np.array(total_correct_class)/np.array(total_seen_class,dtype=np.float32)))}"
             terminal.write(message)
             log.write(message)
